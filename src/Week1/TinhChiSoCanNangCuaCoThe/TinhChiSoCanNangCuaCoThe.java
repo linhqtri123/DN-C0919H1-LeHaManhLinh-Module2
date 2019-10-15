@@ -1,3 +1,5 @@
+package Week1.TinhChiSoCanNangCuaCoThe;
+
 import java.util.Scanner;
 
 public class TinhChiSoCanNangCuaCoThe {

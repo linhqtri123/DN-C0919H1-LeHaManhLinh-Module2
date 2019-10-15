@@ -1,3 +1,5 @@
+package Week1.KiemTraNamNhuan;
+
 import java.util.Scanner;
 
 public class KiemTraNamNhuan {

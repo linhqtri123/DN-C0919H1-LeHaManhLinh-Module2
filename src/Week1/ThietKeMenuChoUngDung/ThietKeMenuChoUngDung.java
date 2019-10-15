@@ -1,3 +1,5 @@
+package Week1.ThietKeMenuChoUngDung;
+
 public class ThietKeMenuChoUngDung {
     public static void main(String[] args) {
         int choice = -1;

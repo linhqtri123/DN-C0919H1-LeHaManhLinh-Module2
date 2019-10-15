@@ -1,3 +1,5 @@
+package Week1.SuDungToanTu;
+
 import java.util.Scanner;
 
 public class SuDungToanTu {

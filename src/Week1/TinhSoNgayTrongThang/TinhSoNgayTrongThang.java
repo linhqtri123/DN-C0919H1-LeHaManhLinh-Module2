@@ -1,3 +1,5 @@
+package Week1.TinhSoNgayTrongThang;
+
 import java.util.Scanner;
 public class TinhSoNgayTrongThang {
     public static void main(String[] args) {

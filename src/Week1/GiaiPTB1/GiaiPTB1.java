@@ -1,3 +1,5 @@
+package Week1.GiaiPTB1;
+
 import java.util.Scanner;
 
 public class GiaiPTB1 {

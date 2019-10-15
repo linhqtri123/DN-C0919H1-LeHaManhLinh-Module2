@@ -1,3 +1,5 @@
+package Week1.TinhTienLaiChoVay;
+
 public class TinhTienLaiChoVay {
     public static void main(String[] args) {
         double money = 1.0;

@@ -1,3 +1,5 @@
+package Week1.USCLN;
+
 public class USCLN {
     public static void main(String[] args) {
         int a, b;

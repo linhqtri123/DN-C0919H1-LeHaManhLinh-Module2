@@ -1,3 +1,5 @@
+package Week1.KiemTraSoNguyenTo;
+
 public class KiemTraSoNguyenTo {
     public static void main(String[] args) {
         int i = 2;

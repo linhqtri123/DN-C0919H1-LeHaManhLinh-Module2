@@ -1,3 +1,5 @@
+package Week1.KhaiBaoVaSuDungBien;
+
 public class KhaiBaoVaSuDungBien {
     public static void main(String[] args) {
         int i = 10;
