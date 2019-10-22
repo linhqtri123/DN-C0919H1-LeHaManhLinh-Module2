@@ -18,14 +18,13 @@ public class Cylinder extends Circle {
         this.height = height;
     }
 
-    @Override
     public double getArea() {
         return height * Math.PI * Math.pow(getRadius(),2);
     }
 
     @Override
     public String toString() {
-        return "A Circle with radius="
+        return "A Cylinder with height="
                 + getHeight()
                 + " with area: "+getArea()
                 + ", which is a subclass of"
