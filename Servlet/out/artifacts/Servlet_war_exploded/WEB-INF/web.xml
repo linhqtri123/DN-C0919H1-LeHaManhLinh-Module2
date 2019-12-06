@@ -6,5 +6,7 @@
     <servlet>
         <servlet-name>ServerTimeServlet</servlet-name>
         <servlet-class>ServerTimeServlet</servlet-class>
+
     </servlet>
+
 </web-app>
