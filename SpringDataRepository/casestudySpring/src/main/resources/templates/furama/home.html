@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Furama Resort</title>
+</head>
+<body>
+<div th:each="dichvu: ${listdichvu}">
+    <a th:href = "@{/view-detail/__${dichvu.id}__}"><img src="/img/tp2.jpg"></a>
+    <h3 th:text="${dichvu.tenDichVu}"></h3>
+    <p th:text="'Diện Tích: '+ ${dichvu.dienTich}"></p>
+    <p th:text="'Trạng Thái: ' + ${dichvu.trangThai}"></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+</head>
+<body>
+<p>
+    <a href="/home">Home</a>
+</p>
+<form th:action="@{/view-detail}" th:object="${dichvu}">
+    <table>
+        <tr>
+            <td>Tên Dịch Vụ:</td>
+            <td><input type="text" th:field="*{tenDichVu}"/></td>
+        </tr>
+        <tr>
+            <td>Diện Tích:</td>
+            <td><input type="text" th:field="*{dienTich}"/></td>
+        </tr>
+        <tr>
+            <td>Số Tầng:</td>
+            <td><input type="text" th:field="*{soTang}"/></td>
+        </tr>
+        <tr>
+            <td>Số Người:</td>
+            <td><input type="text" th:field="*{soNguoiToiDa}"/></td>
+        </tr>
+        <tr>
+            <td>Chi Phí Thuê:</td>
+            <td><input type="text" th:field="*{chiPhiThue}"/></td>
+        </tr>
+        <tr>
+            <td>Hình Ảnh:</td>
+            <td><img src="/img/tp2.jpg"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
