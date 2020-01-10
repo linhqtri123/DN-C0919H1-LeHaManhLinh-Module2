@@ -6,11 +6,38 @@
     <title>Furama Resort</title>
 </head>
 <body>
+<!--Search-->
+<div style="background-color: #e0e0e0">
+    <div>
+        <h3>Search By Price Range</h3>
+    </div>
+    <form action="/home">
+        <select name="fromPrice" style="width: 300px">
+            <option value="1000000">1 Million</option>
+            <option value="2000000">2 Million</option>
+            <option value="3000000">3 Million</option>
+            <option value="5000000">5 Million</option>
+            <option value="7000000">7 Million</option>
+            <option value="10000000">10 Million</option>
+        </select>
+        <select name="toPrice" style="width: 300px">
+            <option value="1000000">1 Million</option>
+            <option value="2000000">2 Million</option>
+            <option value="3000000">3 Million</option>
+            <option value="5000000">5 Million</option>
+            <option value="7000000">7 Million</option>
+            <option value="10000000">10 Million</option>
+        </select>
+        <input type="submit" value="Search" style="width: 150px">
+    </form>
+</div>
 <div th:each="dichvu: ${listdichvu}">
-    <a th:href = "@{/view-detail/__${dichvu.id}__}"><img src="/img/tp2.jpg"></a>
+    <a th:href="@{/view-detail/__${dichvu.id}__}"><img src="/img/tp2.jpg"></a>
     <h3 th:text="${dichvu.tenDichVu}"></h3>
     <p th:text="'Diện Tích: '+ ${dichvu.dienTich}"></p>
+    <p th:text="'Chi Phí thuê: '+ ${dichvu.chiPhiThue}"></p>
     <p th:text="'Trạng Thái: ' + ${dichvu.trangThai}"></p>
+    <a th:href="@{/booking/__${dichvu.id}__}">Booking</a>
 </div>
 </body>
 </html>

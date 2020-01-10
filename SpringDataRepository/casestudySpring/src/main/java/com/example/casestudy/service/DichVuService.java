@@ -14,4 +14,6 @@ public interface DichVuService {
 
     public void deleteDichVu(Long idDichVu);
 
+    public Iterable<FuramaDichVu> findAllByChiPhiThueBetween(String formPrice, String toPrice);
+
 }

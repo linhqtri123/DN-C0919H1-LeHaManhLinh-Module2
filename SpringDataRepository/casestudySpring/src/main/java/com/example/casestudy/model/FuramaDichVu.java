@@ -29,7 +29,7 @@ public class FuramaDichVu {
     private String trangThai;
 
     @Column(name = "kieuthue_id")
-    private int kieuthue_id;
+    private Long kieuthue_id;
 
     @ManyToOne
     @JoinColumn(name = "loaidichvu_id")
@@ -94,11 +94,11 @@ public class FuramaDichVu {
         this.trangThai = trangThai;
     }
 
-    public int getKieuthue_id() {
+    public Long getKieuthue_id() {
         return kieuthue_id;
     }
 
-    public void setKieuthue_id(int kieuthue_id) {
+    public void setKieuthue_id(Long kieuthue_id) {
         this.kieuthue_id = kieuthue_id;
     }
 

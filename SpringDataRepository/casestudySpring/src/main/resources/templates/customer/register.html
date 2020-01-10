@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Customer</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="col-5">
+    <div class="container">
+        <h2>Register Customer</h2>
+        <th:block th:if="${message}">
+            <p th:text="${message}" class="text-success"></p>
+        </th:block>
+        <form action="/register" method="post" th:object="${khachhang}">
+<!--            <input type="hidden" th:value="${}" name="id"/>-->
+            <p></p>
+            <div class="form-group">
+                <label for="tenKH">Name Customer:</label>
+                <p th:if="${#fields.hasErrors('hoTen')}" th:errors="*{hoTen}" class="text-danger"></p>
+                <input type="text" class="form-control" id="tenKH" name="tenKH" th:field="*{hoTen}">
+            </div>
+            <div class="form-group">
+                <label for="ngaySinh">BirthDay:</label>
+                <p th:if="${#fields.hasErrors('ngaySinh')}" th:errors="*{ngaySinh}" class="text-danger"></p>
+                <input type="date" class="form-control" id="ngaySinh" name="ngaySinh" th:field="*{ngaySinh}">
+            </div>
+            <div class="form-group">
+                <label for="cmnd">Id Card :</label>
+                <p th:if="${#fields.hasErrors('soCMND')}" th:errors="*{soCMND}" class="text-danger"></p>
+                <input type="text" class="form-control" id="cmnd" name="cmnd" th:field="*{soCMND}">
+            </div>
+            <div class="form-group">
+                <label for="sdt">Number Phone:</label>
+                <p th:if="${#fields.hasErrors('sdt')}" th:errors="*{sdt}" class="text-danger"></p>
+                <input type="text" class="form-control" id="sdt" name="sdt" th:field="*{sdt}">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger"></p>
+                <input type="email" class="form-control" id="email" name="email" th:field="*{email}">
+            </div>
+            <div class="form-group">
+                <label for="diachi">Address:</label>
+                <p th:if="${#fields.hasErrors('diaChi')}" th:errors="*{diaChi}" class="text-danger"></p>
+                <input type="text" class="form-control" id="diachi" name="diachi" th:field="*{diaChi}">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

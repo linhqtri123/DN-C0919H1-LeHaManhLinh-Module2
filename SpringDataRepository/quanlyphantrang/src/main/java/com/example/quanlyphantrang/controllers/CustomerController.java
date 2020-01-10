@@ -7,6 +7,7 @@ import com.example.quanlyphantrang.service.ProvinceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -27,14 +28,15 @@ public class CustomerController {
     }
 
     @GetMapping("")
-    public ModelAndView listCustomers(@RequestParam("s") Optional<String> s, Pageable pageable) {
+    public ModelAndView listCustomers(@RequestParam(value = "s",required = false) String s,@PageableDefault(size = 5) Pageable pageable) {
         Page<Customer> customers;
-        if (s.isPresent()) {
-            customers = customerService.findAllByFirstNameContaining(s.get(), pageable);
+        ModelAndView modelAndView = new ModelAndView("list");
+        if (s != null) {
+            customers = customerService.findAllByFirstNameContaining(s, pageable);
+            modelAndView.addObject("search", s);
         } else {
             customers = customerService.findAll(pageable);
         }
-        ModelAndView modelAndView = new ModelAndView("list");
         modelAndView.addObject("customers", customers);
         return modelAndView;
     }

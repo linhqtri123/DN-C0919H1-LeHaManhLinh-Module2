@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="col-5">
+    <div class="container">
+        <h2>Create Book</h2>
+        <p>
+            <a href="/">Book list</a>
+        </p>
+        <th:block th:if="${message}">
+            <p th:text="${message}" class="text-danger"></p>
+        </th:block>
+        <form action="/create-book" method="post" th:object="${book}">
+            <!--                        <input type="hidden" th:value="${}" name="id"/>-->
+            <p></p>
+            <div class="form-group">
+                <label for="bookName">Name Book:</label>
+                <p th:if="${#fields.hasErrors('bookName')}" th:errors="*{bookName}" class="text-danger"></p>
+                <input type="text" class="form-control" id="bookName" name="bookName" th:field="*{bookName}">
+            </div>
+            <div class="form-group">
+                <label for="author">Author :</label>
+                <p th:if="${#fields.hasErrors('author')}" th:errors="*{author}" class="text-danger"></p>
+                <input type="text" class="form-control" id="author" name="author" th:field="*{author}">
+            </div>
+            <div class="form-group">
+                <label for="price">Price :</label>
+                <p th:if="${#fields.hasErrors('price')}" th:errors="*{price}" class="text-danger"></p>
+                <input type="text" class="form-control" id="price" name="price" th:field="*{price}">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface DichVuRepository extends PagingAndSortingRepository<FuramaDichVu,Long> {
+    Iterable<FuramaDichVu> findAllByChiPhiThueBetween(String fromPrice, String toPrice);
 }

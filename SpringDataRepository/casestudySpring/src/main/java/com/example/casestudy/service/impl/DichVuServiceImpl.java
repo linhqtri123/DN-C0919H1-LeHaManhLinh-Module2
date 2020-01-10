@@ -33,4 +33,9 @@ public class DichVuServiceImpl implements DichVuService {
     public void deleteDichVu(Long idDichVu) {
         dichVuRepository.deleteById(idDichVu);
     }
+
+    @Override
+    public Iterable<FuramaDichVu> findAllByChiPhiThueBetween(String formPrice, String toPrice) {
+        return dichVuRepository.findAllByChiPhiThueBetween(formPrice,toPrice);
+    }
 }
