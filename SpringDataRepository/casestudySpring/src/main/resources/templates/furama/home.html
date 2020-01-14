@@ -38,6 +38,7 @@
     <p th:text="'Chi Phí thuê: '+ ${dichvu.chiPhiThue}"></p>
     <p th:text="'Trạng Thái: ' + ${dichvu.trangThai}"></p>
     <a th:href="@{/booking/__${dichvu.id}__}">Booking</a>
+    <a th:href="@{/favorite/__${dichvu.id}__}">Like</a>
 </div>
 </body>
 </html>

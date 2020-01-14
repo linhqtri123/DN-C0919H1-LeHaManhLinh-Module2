@@ -1,15 +1,13 @@
 package com.example.casestudy.controller;
 
 import com.example.casestudy.model.FuramaDichVu;
+import com.example.casestudy.model.FuramaFavorite;
 import com.example.casestudy.model.FuramaHopDong;
 import com.example.casestudy.service.DichVuService;
 import com.example.casestudy.service.HopDongService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.Cookie;
@@ -19,6 +17,7 @@ import java.sql.Date;
 
 
 @Controller
+@SessionAttributes("favorite")
 public class FuramaController {
     @Autowired
     DichVuService dichVuService;
@@ -74,5 +73,20 @@ public class FuramaController {
         }
         ModelAndView modelAndView = new ModelAndView("furama/bookingSuccess");
         return modelAndView;
+    }
+
+    @GetMapping("/favorite/{id}")
+    public String saveSessionFavorite(@PathVariable Long id, @ModelAttribute("favorite") FuramaFavorite sessionFavorite){
+        sessionFavorite.add(dichVuService.getDichVu(id).orElse(null));
+        return "redirect:/home";
+    }
+
+    @GetMapping("/favoritePage")
+    public String getFavoritePage(){
+        return "furama/favorite";
+    }
+    @ModelAttribute("favorite")
+    public FuramaFavorite setupSession(){
+        return new FuramaFavorite();
     }
 }
