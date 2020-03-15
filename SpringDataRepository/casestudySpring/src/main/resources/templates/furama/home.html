@@ -37,6 +37,7 @@
     <p th:text="'Diện Tích: '+ ${dichvu.dienTich}"></p>
     <p th:text="'Chi Phí thuê: '+ ${dichvu.chiPhiThue}"></p>
     <p th:text="'Trạng Thái: ' + ${dichvu.trangThai}"></p>
+    <a th:href="@{/view-detail/__${dichvu.id}__}">Detail</a>
     <a th:href="@{/booking/__${dichvu.id}__}">Booking</a>
     <a th:href="@{/favorite/__${dichvu.id}__}">Like</a>
 </div>

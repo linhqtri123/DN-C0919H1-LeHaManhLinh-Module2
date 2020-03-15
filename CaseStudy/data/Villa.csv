@@ -1,0 +1,3 @@
+id,nameService,areaUsing,costRenting,maxPeople,typeRenting,roomStandard,description,areaPool,numberOfFloor
+7110c61867b04eb09d89b3ed3353341b,Vila,31.0,12.0,2,Linh,Vip,cccc,31.0,2
+f43345dd24a0445ca8698dd9390f64d6,Vila Alibaba,31.0,12.0,2,Vip,None,Non,34.0,3

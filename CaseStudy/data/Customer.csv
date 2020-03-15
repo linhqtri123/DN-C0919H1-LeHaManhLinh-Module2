@@ -1,0 +1,4 @@
+idCus,nameCustomer,gender,idCard,phone,mail,typeCustomer,address,birthday
+2503282f3d7f472d8393cbfb3a48e9b5,Linh,male,123456789,915047444,linh@gmail.com,Vip,Da Nang,16/10/1998
+9a0751cb22f64deba5f491342a7ddde2,An,Female,987654321,918765321,an@gmail.com,Normal,Hue,10/10/1998
+573da50b557f4876be4fd3e688fd0462,Dung,Unknow,123487694,916456789,dung@gmail.com,Vip,Da Nang,11/11/1998
